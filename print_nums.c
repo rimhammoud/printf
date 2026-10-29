@@ -6,7 +6,7 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 20:24:23 by rihammou          #+#    #+#             */
-/*   Updated: 2026/10/28 15:15:53 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/10/29 10:43:46 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(nbr + '0', fd);
 }
-int print_nb(va_list args)
+
+int	print_nb(va_list args)
 {
-	int 	nbr;
-	int	 	count;
+	int		nbr;
+	int		count;
 	long	n;
 
 	count = 0;
@@ -52,6 +53,7 @@ int print_nb(va_list args)
 	}
 	return (count);
 }
+
 void	ft_putunbr_fd(unsigned int n, int fd)
 {
 	long	nbr;
@@ -70,10 +72,11 @@ void	ft_putunbr_fd(unsigned int n, int fd)
 	else
 		ft_putchar_fd(nbr + '0', fd);
 }
-int print_unb(va_list args)
+
+int	print_unb(va_list args)
 {
-	unsigned int 	nbr;
-	int	 			count;
+	unsigned int	nbr;
+	int				count;
 	long			n;
 
 	count = 0;

@@ -6,7 +6,7 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 10:46:49 by rihammou          #+#    #+#             */
-/*   Updated: 2026/10/28 15:13:10 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/10/29 12:18:46 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	conv_check(int c, va_list args)
 		return (print_nb(args));
 	else if (c == 'u')
 		return (print_unb(args));
+	else if (c == 'x' || c == 'X')
+		return (print_hex(args, c));
 	return (0);
 }
 
@@ -80,44 +82,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (size);
-}
-#include <stdio.h>
-#include <limits.h>
-
-int main(void)
-{
-    int a;
-    int b;
-
-    a = printf("Normal: %u\n", 42u);
-    fflush(stdout);
-    b = ft_printf("Normal: %u\n", 42u);
-    printf("Return: %d | %d\n\n", a, b);
-
-    a = printf("Zero: %u\n", 0u);
-    fflush(stdout);
-    b = ft_printf("Zero: %u\n", 0u);
-    printf("Return: %d | %d\n\n", a, b);
-
-    a = printf("UINT_MAX: %u\n", UINT_MAX);
-    fflush(stdout);
-    b = ft_printf("UINT_MAX: %u\n", UINT_MAX);
-    printf("Return: %d | %d\n\n", a, b);
-
-    a = printf("INT_MAX: %u\n", (unsigned int)INT_MAX);
-    fflush(stdout);
-    b = ft_printf("INT_MAX: %u\n", (unsigned int)INT_MAX);
-    printf("Return: %d | %d\n\n", a, b);
-
-    a = printf("Negative cast: %u\n", (unsigned int)-1);
-    fflush(stdout);
-    b = ft_printf("Negative cast: %u\n", (unsigned int)-1);
-    printf("Return: %d | %d\n\n", a, b);
-
-    a = printf("Multiple: %u %u %u\n", 0u, 42u, UINT_MAX);
-    fflush(stdout);
-    b = ft_printf("Multiple: %u %u %u\n", 0u, 42u, UINT_MAX);
-    printf("Return: %d | %d\n", a, b);
-
-    return (0);
 }

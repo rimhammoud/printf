@@ -6,7 +6,7 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:56:29 by rihammou          #+#    #+#             */
-/*   Updated: 2026/10/28 15:11:48 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/10/29 10:49:27 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,7 @@ size_t	ft_strlen(const char *str);
 int		hex_conv(va_list args);
 void	ft_putnbr_fd(int n, int fd);
 int		print_nb(va_list args);
-int 	print_unb(va_list args);
+int		print_unb(va_list args);
+int		print_hex(va_list args, int c);
+int		ft_printf(const char *format, ...);
+void	ft_putnbr_fd(int n, int fd);
