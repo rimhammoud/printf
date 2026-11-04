@@ -6,30 +6,11 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 20:24:23 by rihammou          #+#    #+#             */
-/*   Updated: 2026/10/29 10:43:46 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:04:25 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	long	nbr;
-
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nbr = -nbr;
-	}
-	if (nbr >= 10)
-	{
-		ft_putnbr_fd(nbr / 10, fd);
-		ft_putchar_fd((nbr % 10) + '0', fd);
-	}
-	else
-		ft_putchar_fd(nbr + '0', fd);
-}
 
 int	print_nb(va_list args)
 {

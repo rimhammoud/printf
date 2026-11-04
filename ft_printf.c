@@ -6,13 +6,13 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 10:46:49 by rihammou          #+#    #+#             */
-/*   Updated: 2026/10/29 12:18:46 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:42:01 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	printstr(va_list args)
+int	print_str(va_list args)
 {
 	char	*str;
 
@@ -26,7 +26,7 @@ int	printstr(va_list args)
 	return (ft_strlen(str));
 }
 
-int	printchar(va_list args)
+int	print_char(va_list args)
 {
 	char	c;
 
@@ -35,17 +35,19 @@ int	printchar(va_list args)
 	return (1);
 }
 
-int	conv_check(int c, va_list args)
+int	conv_check(int c, va_list args, const char *str, int checker)
 {
+	if (!checker)
+		flags_check(c, args, str);
 	if (c == '%')
 	{
 		ft_putchar_fd(c, 1);
 		return (1);
 	}
 	else if (c == 'c')
-		return (printchar(args));
+		return (print_char(args));
 	else if (c == 's')
-		return (printstr(args));
+		return (print_str(args));
 	else if (c == 'p')
 		return (hex_conv(args));
 	else if (c == 'd' || c == 'i')
@@ -75,7 +77,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			size += conv_check(format[i + 1], args);
+			size += conv_check(format[i + 1], args, format + i + 2, 0);
 			i++;
 		}
 		i++;
