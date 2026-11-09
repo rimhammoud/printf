@@ -6,15 +6,16 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:56:29 by rihammou          #+#    #+#             */
-/*   Updated: 2026/11/09 10:26:41 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/11/09 10:42:32 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <stdarg.h>
-#include "libft/libft.h"
+# include <stdarg.h>
+# include <unistd.h>
+# include "libft/libft.h"
 
 int		hex_conv(va_list args);
 int		print_nb(va_list args);
