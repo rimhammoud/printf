@@ -6,7 +6,7 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 10:46:49 by rihammou          #+#    #+#             */
-/*   Updated: 2026/11/04 13:42:01 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/11/09 10:23:44 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ int	print_char(va_list args)
 	return (1);
 }
 
-int	conv_check(int c, va_list args, const char *str, int checker)
+int	conv_check(int c, va_list args)
 {
-	if (!checker)
-		flags_check(c, args, str);
 	if (c == '%')
 	{
 		ft_putchar_fd(c, 1);
@@ -77,7 +75,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			size += conv_check(format[i + 1], args, format + i + 2, 0);
+			size += conv_check(format[i + 1], args);
 			i++;
 		}
 		i++;

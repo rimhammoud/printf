@@ -6,7 +6,7 @@
 /*   By: rihammou <rihammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 13:20:21 by rihammou          #+#    #+#             */
-/*   Updated: 2026/10/29 13:13:18 by rihammou         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:21:00 by rihammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	print_nbr(unsigned long nbr, char *base, int length)
 
 int	hex_conv(va_list args)
 {
-	char			*base;
 	unsigned long	nbr;
 
 	nbr = (unsigned long)va_arg(args, void *);
@@ -36,9 +35,8 @@ int	hex_conv(va_list args)
 		ft_putstr_fd("(nil)", 1);
 		return (5);
 	}
-	base = "0123456789abcdef";
 	ft_putstr_fd("0x", 1);
-	return (2 + print_nbr(nbr, base, 16));
+	return (2 + print_nbr(nbr, "0123456789abcdef", 16));
 }
 
 int	print_hex(va_list args, int c)
