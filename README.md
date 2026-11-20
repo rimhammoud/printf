@@ -47,10 +47,3 @@ Pointer addresses are converted into hexadecimal, while signed and unsigned inte
 The implementation mainly uses simple variables, pointers, and the variadic argument list rather than additional data structures. This approach keeps memory usage low and avoids unnecessary dynamic allocation.
 
 Each printing function tracks the number of characters it outputs so that `ft_printf()` can return the total printed length.
-
-## Resources
-
-- [printf(3) — Linux manual page](https://man7.org/linux/man-pages/man3/printf.3.html) — Reference for standard `printf()` behavior and format conversions.
-- [stdarg(3) — Linux manual page](https://man7.org/linux/man-pages/man3/stdarg.3.html) — Reference for variadic arguments and the use of `va_list`, `va_start`, `va_arg`, and `va_end`.
-
-**AI usage:** ChatGPT was used to clarify C concepts, explain variadic functions, review implementation logic, and help identify errors during testing.
